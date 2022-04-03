@@ -2,7 +2,7 @@ import React from "react";
 import "./Racer.css";
 
 function Pilot(props) {
-   const { position, name, team, number, country, points } = props;
+   const { position, name, team, number, country, points, increaseFunc, decreaseFunc } = props;
 
    return (
       <div className="racer">
@@ -12,8 +12,8 @@ function Pilot(props) {
          <p>{number}</p>
          <p>{country}</p>
          <p>{points}</p>
-         <button>+</button>
-         <button>-</button>
+         <button onClick={increaseFunc}>+</button>
+         <button onClick={decreaseFunc}>-</button>
       </div>
    );
 }
