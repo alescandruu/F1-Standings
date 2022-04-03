@@ -1,0 +1,19 @@
+.racer {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bestTeamCard {
+    background-color: blue;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+}
