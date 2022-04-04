@@ -1,5 +1,9 @@
 import React from "react";
 import "./Pilot.css";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import ReactCountryFlag from "react-country-flag";
 
 function Pilot(props) {
    const {
@@ -14,6 +18,8 @@ function Pilot(props) {
       points,
       increaseFunc,
       decreaseFunc,
+      firstPilotImage,
+      secondPilotImage,
    } = props;
 
    return (
@@ -25,17 +31,33 @@ function Pilot(props) {
                <p>{firstPilot}</p>
                <p>{secondPilot}</p>
                <p>{points}</p>
+               <img src={firstPilotImage} className="bestTeamPilots"></img>
+               <img src={secondPilotImage} className="bestTeamPilots"></img>
             </div>
          ) : (
-            <div className="racer">
+            <div className="pilot">
                <p>{position}</p>
                <p>{firstPilot}</p>
+               <img src={firstPilotImage} alt="image"></img>
                <p>{team}</p>
                <p>{number}</p>
-               <p>{country}</p>
+               {/* <p>{country}</p> */}
+               <ReactCountryFlag countryCode={country} svg />
                <p>{points}</p>
-               <button onClick={increaseFunc}>+</button>
-               <button onClick={decreaseFunc}>-</button>
+               <Button
+                  onClick={increaseFunc}
+                  variant="contained"
+                  href="#contained-buttons"
+               >
+                  <AddIcon />
+               </Button>
+               <Button
+                  onClick={decreaseFunc}
+                  variant="contained"
+                  href="#contained-buttons"
+               >
+                  <RemoveIcon />
+               </Button>
             </div>
          )}
       </>
