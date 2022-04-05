@@ -14,7 +14,7 @@ function App() {
 
    const bestTeam = () => {
       let teams = data.map((item, lastIndex) => {
-         let firstIndex = data.findIndex((pilot) => pilot.team == item.team);
+         let firstIndex = data.findIndex((pilot) => pilot.team === item.team);
          if (firstIndex < lastIndex) {
             let team = {
                name: item.team,
@@ -50,7 +50,7 @@ function App() {
 
    return (
       <div className="App">
-         <img src={logo} className="f1Logo" />
+         <img src={logo} alt="" className="f1Logo" />
           <Pilot
             key={'bestTeamCard'}
             bestTeam={true}
