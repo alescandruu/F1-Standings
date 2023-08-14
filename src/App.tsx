@@ -1,14 +1,24 @@
 import Pilot from "./Components/Pilot";
+import Team from "./Components/Team";
+import backgroundImage from "./track.jpg";
 
 function App() {
    return (
-      <div className="flex justify-around">
-         <div className="bg-slate-500 w-[30%]">
-            <h3>Here is going to be the best team card.</h3>
+      <div
+         style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: "cover",
+         }}
+         className="flex justify-around h-screen w-screen"
+      >
+         <div className="w-[40%] text-center mt-10">
+            <h3 className="text-3xl text-white font-bold mb-5">BEST TEAM</h3>
+            <Team />
          </div>
-         <div className="bg-slate-500 w-[40%] text-center">
-            <h3>Standings</h3>
-            <div className="flex flex-col justify-center align-middle">
+         <div className="w-[35%] text-center mt-10">
+            <h3 className="text-3xl text-white font-bold mb-5">STANDINGS</h3>
+            <div className="flex flex-col">
+               <Pilot />
                <Pilot />
                <Pilot />
             </div>
