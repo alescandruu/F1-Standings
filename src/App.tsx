@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Pilot from "./Components/Pilot";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <div className="flex justify-around">
+         <div className="bg-slate-500 w-[30%]">
+            <h3>Here is going to be the best team card.</h3>
+         </div>
+         <div className="bg-slate-500 w-[40%] text-center">
+            <h3>Standings</h3>
+            <div className="flex flex-col justify-center align-middle">
+               <Pilot />
+               <Pilot />
+            </div>
+         </div>
+      </div>
+   );
 }
 
 export default App;
