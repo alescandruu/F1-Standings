@@ -1,6 +1,7 @@
 import Pilot from "./Components/Pilot";
 import Team from "./Components/Team";
 import backgroundImage from "./track.jpg";
+import { mockData } from "./MockData";
 
 function App() {
    return (
@@ -9,18 +10,24 @@ function App() {
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
          }}
-         className="flex justify-around h-screen w-screen"
+         className="flex justify-end h-screen w-screen overflow-x-hidden"
       >
-         <div className="w-[40%] text-center mt-10">
-            <h3 className="text-3xl text-white font-bold mb-5">BEST TEAM</h3>
+         <div className="w-[30%] text-center mt-10 fixed left-20">
             <Team />
          </div>
-         <div className="w-[35%] text-center mt-10">
-            <h3 className="text-3xl text-white font-bold mb-5">STANDINGS</h3>
+         <div className="w-[60%] text-center mt-10">
             <div className="flex flex-col">
-               <Pilot />
-               <Pilot />
-               <Pilot />
+               {mockData.map((pilot) => (
+                  <Pilot
+                     firstName={pilot.firstName}
+                     lastname={pilot.lastName}
+                     number={pilot.number}
+                     points={pilot.points}
+                     country={pilot.country}
+                     team={pilot.team}
+                     image={pilot.image}
+                  />
+               ))}
             </div>
          </div>
       </div>
