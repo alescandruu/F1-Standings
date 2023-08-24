@@ -1,9 +1,18 @@
-import Pilot from "./Components/Pilot";
-import Team from "./Components/Team";
 import backgroundImage from "./track.jpg";
 import { mockData } from "./MockData";
+import { useEffect, useState } from "react";
+import PilotCard from "./Components/PilotCard";
+import TeamCard from "./Components/TeamCard";
 
 function App() {
+   const [data, setData] = useState(mockData);
+   useEffect(() => {
+      const sortedData = [...mockData];
+      sortedData.sort((x, y) => y.points - x.points);
+
+      setData(sortedData);
+   }, [])
+
    return (
       <div
          style={{
@@ -13,12 +22,12 @@ function App() {
          className="flex justify-end h-screen w-screen overflow-x-hidden"
       >
          <div className="w-[30%] text-center mt-10 fixed left-20">
-            <Team />
+            <TeamCard />
          </div>
          <div className="w-[60%] text-center mt-10">
             <div className="flex flex-col">
-               {mockData.map((pilot) => (
-                  <Pilot
+               {data.map((pilot) => (
+                  <PilotCard
                      firstName={pilot.firstName}
                      lastname={pilot.lastName}
                      number={pilot.number}

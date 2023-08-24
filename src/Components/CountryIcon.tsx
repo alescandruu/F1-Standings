@@ -13,7 +13,7 @@ import { Cn } from 'react-flags-select';
 import { Dk } from 'react-flags-select';
 import { Ph } from 'react-flags-select';
 
-function CountryIcon({country}: {country: string}) {
+const CountryIcon = ({country}: {country: string}) => {
   switch (country) {
      case "GB":
         return <Gb />;

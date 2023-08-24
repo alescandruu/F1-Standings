@@ -22,7 +22,7 @@ export const mockData = [
        lastName: "Verstappen",
        number: 1,
        team: "RED BULL RACING",
-       points: 0,
+       points: 50,
        image: "https://i.ibb.co/BcBmc14/verstappen.png",
        country: "NL",
     },

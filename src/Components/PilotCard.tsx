@@ -1,20 +1,13 @@
 import CountryIcon from "./CountryIcon"
-interface PilotProps {
-   firstName: string,
-   lastname: string, 
-   number: number,
-   team: string,
-   points: number,
-   country: string,
-   image: string
-}
+import { logoHandler } from "../Utils/TeamLogoHandler";
+import { Team, Pilot } from "../Utils/Types";
 
-function Pilot({firstName, lastname, number, team, points, country, image}: PilotProps) {
+const PilotCard = ({firstName, lastname, number, team, points, country, image}: Pilot) => {
    return (
       <div className="bg-white w-[60%] flex flex-row justify-between items-center mx-auto mt-[3%] rounded-[12px]">
          <img
             className="w-[25%]"
-            src="https://raw.githubusercontent.com/alescandruu/Formula1Standing/master/src/images/mercedesLogo.png"
+            src={logoHandler(team as Team)}
          ></img>
          <img
             className="w-[35.4%]"
@@ -47,4 +40,4 @@ function Pilot({firstName, lastname, number, team, points, country, image}: Pilo
    );
 }
 
-export default Pilot;
+export default PilotCard;

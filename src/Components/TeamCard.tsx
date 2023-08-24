@@ -1,4 +1,4 @@
-function Team() {
+const TeamCard = () => {
    return (
       <div className="bg-white w-[120%] flex flex-row justify-between mx-auto mt-[50%] rounded-[12px]">
          <img
@@ -28,4 +28,4 @@ function Team() {
    );
 }
 
-export default Team;
+export default TeamCard;
