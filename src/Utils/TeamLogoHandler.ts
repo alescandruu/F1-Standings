@@ -2,7 +2,7 @@ import { Team } from "./Types";
 const root =
    "https://raw.githubusercontent.com/alescandruu/Formula1Standing/master/src/images/";
 
-export const logoHandler = (team: Team) => {
+export const logoHandler = (team: Team): string => {
    switch (team) {
       case "Mercedes AMG F1":
          return root + "mercedesLogo.png";

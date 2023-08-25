@@ -1,11 +1,11 @@
 export type Pilot = {
    firstName: string;
-   lastname: string;
+   lastName: string;
    number: number;
    team: string;
    points: number;
-   country: string;
    image: string;
+   country: string;
 };
 
 export type Team =
@@ -19,3 +19,9 @@ export type Team =
    | "ALFA ROMEO RACING"
    | "HAAS F1"
    | "WILLIAMS RACING";
+
+export type ContextData = {
+   data: Pilot[];
+   increasePoints: any;
+   decreasePoints: any;
+}

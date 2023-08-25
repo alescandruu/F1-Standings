@@ -1,4 +1,6 @@
-export const mockData = [
+import { Pilot } from "./Utils/Types";
+
+export const mockData: Pilot[] = [
     {
        firstName: "Lewis",
        lastName: "Hamilton",

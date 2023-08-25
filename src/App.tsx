@@ -1,17 +1,17 @@
 import backgroundImage from "./track.jpg";
-import { mockData } from "./MockData";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import PilotCard from "./Components/PilotCard";
 import TeamCard from "./Components/TeamCard";
+import { Context } from "./Components/Context";
 
 function App() {
-   const [data, setData] = useState(mockData);
-   useEffect(() => {
-      const sortedData = [...mockData];
-      sortedData.sort((x, y) => y.points - x.points);
+   const { data } = useContext(Context);
 
-      setData(sortedData);
-   }, [])
+   useEffect(() => {
+     console.log('updated');
+     
+   }, [data])
+   
 
    return (
       <div
@@ -29,7 +29,7 @@ function App() {
                {data.map((pilot) => (
                   <PilotCard
                      firstName={pilot.firstName}
-                     lastname={pilot.lastName}
+                     lastName={pilot.lastName}
                      number={pilot.number}
                      points={pilot.points}
                      country={pilot.country}
