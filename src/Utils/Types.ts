@@ -24,4 +24,18 @@ export type ContextData = {
    data: Pilot[];
    increasePoints: any;
    decreasePoints: any;
+};
+
+export type TeamStats = {
+   name: string;
+   points: number;
+};
+
+export type BestTeamStats = {
+   name: string;
+   points: number;
+   firstPilotName: string;
+   firstPilotImage: string;
+   secondPilotName: string;
+   secondPilotImage: string;
 }

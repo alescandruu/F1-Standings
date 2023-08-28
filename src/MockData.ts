@@ -24,7 +24,7 @@ export const mockData: Pilot[] = [
        lastName: "Verstappen",
        number: 1,
        team: "RED BULL RACING",
-       points: 50,
+       points: 30,
        image: "https://i.ibb.co/BcBmc14/verstappen.png",
        country: "NL",
     },

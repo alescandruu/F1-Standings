@@ -24,7 +24,6 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
          })
          .sort((x, y) => y.points - x.points);
       setData(newData);
-      console.log(data);
    };
 
    const decreasePoints = (number: number) => {

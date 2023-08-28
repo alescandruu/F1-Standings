@@ -7,12 +7,6 @@ import { Context } from "./Components/Context";
 function App() {
    const { data } = useContext(Context);
 
-   useEffect(() => {
-     console.log('updated');
-     
-   }, [data])
-   
-
    return (
       <div
          style={{
