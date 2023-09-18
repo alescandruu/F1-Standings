@@ -7,7 +7,7 @@ const TeamCard = () => {
 
 
    return (
-      <div className="bg-white w-[120%] flex flex-row justify-between mx-auto mt-[50%] rounded-[12px]">
+      <div className="bg-white w-[120%] flex flex-row justify-between mx-auto mt-[50%] rounded-[12px] draggable-item" draggable='true'>
          <img className="w-[27%]" src={logoHandler(name as Team)}></img>
          <div className="flex flex-col justify-between">
             <p className="text-base font-bold">{`Total points: ${points}`}</p>

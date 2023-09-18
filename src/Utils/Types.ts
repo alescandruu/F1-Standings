@@ -8,6 +8,10 @@ export type Pilot = {
    country: string;
 };
 
+export type PilotStats = Pilot & {
+   position: number;
+}
+
 export type Team =
    | "Mercedes AMG F1"
    | "RED BULL RACING"
@@ -21,9 +25,10 @@ export type Team =
    | "WILLIAMS RACING";
 
 export type ContextData = {
-   data: Pilot[];
-   increasePoints: any;
-   decreasePoints: any;
+   generalStandings: Pilot[];
+   raceStandings: Pilot[];
+   // increasePoints: any;
+   // decreasePoints: any;
 };
 
 export type TeamStats = {

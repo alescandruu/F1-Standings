@@ -3,12 +3,12 @@ import { useContext, useMemo } from "react";
 import { Pilot, TeamStats, BestTeamStats } from "./Types";
 
 export const useBestTeamHandler = () => {
-   const { data } = useContext(Context);
+   const { generalStandings } = useContext(Context);
 
    const bestTeam = useMemo(() => {
     const teamStats: TeamStats[] = [];
 
-    data.forEach(( pilot:Pilot ) => {
+    generalStandings.forEach(( pilot:Pilot ) => {
         const index = teamStats.findIndex(team => team.name === pilot.team);
         if(index >= 0) {
             teamStats[index].points += pilot.points;
@@ -23,7 +23,7 @@ export const useBestTeamHandler = () => {
     
     teamStats.sort((a, b) => b.points - a.points);
     
-    const pilots = data.filter(pilot => {
+    const pilots = generalStandings.filter(pilot => {
         if(pilot.team === teamStats[0].name) return pilot;
     })
 
@@ -37,7 +37,7 @@ export const useBestTeamHandler = () => {
     };
 
     return bestTeam;
-   }, [data]);
+   }, [generalStandings]);
 
    return bestTeam;
 };

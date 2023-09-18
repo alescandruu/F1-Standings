@@ -1,11 +1,12 @@
 import backgroundImage from "./track.jpg";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import PilotCard from "./Components/PilotCard";
 import TeamCard from "./Components/TeamCard";
 import { Context } from "./Components/Context";
+import SortableStandings from "./Components/SortableStandings";
 
 function App() {
-   const { data } = useContext(Context);
+   const { generalStandings } = useContext(Context);
 
    return (
       <div
@@ -15,13 +16,15 @@ function App() {
          }}
          className="flex justify-end h-screen w-screen overflow-x-hidden"
       >
-         <div className="w-[30%] text-center mt-10 fixed left-20">
+         <div className="w-[30%] text-center mt-0 fixed left-20">
             <TeamCard />
+            <SortableStandings />
          </div>
          <div className="w-[60%] text-center mt-10">
             <div className="flex flex-col">
-               {data.map((pilot) => (
+               {generalStandings.map((pilot, index) => (
                   <PilotCard
+                     key={pilot.number}
                      firstName={pilot.firstName}
                      lastName={pilot.lastName}
                      number={pilot.number}
@@ -29,6 +32,7 @@ function App() {
                      country={pilot.country}
                      team={pilot.team}
                      image={pilot.image}
+                     position={index+1}
                   />
                ))}
             </div>
